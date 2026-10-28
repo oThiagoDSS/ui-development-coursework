@@ -6,12 +6,13 @@ Welcome to my academic repository for **User Interface Development**, part of th
 
 ## 📂 Course Modules & Index
 
-| Module / Topic | Description | Status | Folder Link |
+| Module / Topic | Covered Contents | Status | Folder Link |
 | :--- | :--- | :---: | :---: |
-| **Module 01: HCI & Usability** | Interface evaluation, heuristics, accessibility, and ISO 9241 standards. | Completed | [`01-hci-evaluations/`](./01-hci-evaluations/) |
-| **Module 02: UX/UI & Design Thinking** | Problem framing, personas, user journey mapping, and prototyping in Figma. | Completed | [`02-ux-ui-design-thinking/`](./02-ux-ui-design-thinking/) |
-| **Module 03: HTML5 & CSS3 Fundamentals** | Semantic HTML, CSS box model, Flexbox, Grid, and responsive web design. | Completed | [`03-html-css-fundamentals/`](./03-html-css-fundamentals/) |
-| **Module 04: JavaScript & DOM** *(Upcoming)* | Basic programming logic, decision structures, arrays, and DOM manipulation. | Upcoming | *Pending* |
+| **Module 01: HCI & Usability** | Introduction to HCI, usability, accessibility, ergonomics, and ISO 9241 standards. | Completed | [`01-hci-evaluations/`](./01-hci-evaluations/) |
+| **Module 02: UX/UI & Design Thinking** | Design Thinking phases, user personas, journey mapping, low/high-fi prototyping (Figma), and WCAG. | Completed | [`02-ux-ui-design-thinking/`](./02-ux-ui-design-thinking/) |
+| **Module 03: HTML5 & CSS3 Fundamentals** | Semantic markup, forms, CSS box model, Flexbox, Grid, positioning, and media queries. | Completed | [`03-html-css-fundamentals/`](./03-html-css-fundamentals/) |
+| **Module 04: JavaScript & DOM Manipulation** | Core JS concepts, control structures, arrays, functions, and DOM manipulation. | Upcoming (Nov/Dec) | *Pending* |
+| **Module 05: Final Academic Project** | Integrated interface development project applying HCI, UX/UI, HTML, CSS, and JS. | Upcoming (Dec) | *Pending* |
 
 ---
 
