@@ -4,7 +4,7 @@
 **Profa. Kadidja Valéria | ADS**  
 **Aula prática de laboratório | Material do estudante**
 
-![Logomarca CEUB](https://institucional.uniceub.br/hubfs/BrandCenter/img/logo-ceub-versao-condensada.png)
+![Logomarca CEUB](https://institucional.uniceub.br/hubfs/BrandCenter/img/logo-ceub-negativa-colorida-02.png)
 ---
 
 ## 1. Apresentação
