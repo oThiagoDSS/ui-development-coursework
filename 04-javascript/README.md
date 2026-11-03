@@ -365,14 +365,14 @@ botao.addEventListener("click", function () {
 
 Marque uma alternativa para cada questão e discuta suas escolhas com a turma.
 
-1. Qual tecnologia controla o comportamento de uma página? (A) HTML (B) CSS (C) JavaScript (D) SQL
-2. Qual declaração permite reatribuir valores? (A) const (B) let (C) class (D) return
-3. Qual o tipo de `"ADS"`? (A) Number (B) Boolean (C) String (D) Null
-4. Quanto vale `10 % 3`? (A) 3 (B) 1 (C) 0 (D) 10
-5. Qual operador compara valor e tipo? (A) = (B) == (C) === (D) !=
-6. Qual método localiza um elemento HTML por ID? (A) console.log() (B) document.getElementById() (C) typeof (D) Number()
-7. Qual operador lógico representa E? (A) || (B) ! (C) &amp;&amp; (D) =
-8. Qual função converte texto numérico em número? (A) String() (B) Number() (C) Boolean() (D) typeof
+1. Qual tecnologia controla o comportamento de uma página? (A) HTML (B) CSS (C) JavaScript (D) SQL | **R: A**
+2. Qual declaração permite reatribuir valores? (A) const (B) let (C) class (D) return | **R: B**
+3. Qual o tipo de `"ADS"`? (A) Number (B) Boolean (C) String (D) Null | **R: C**
+4. Quanto vale `10 % 3`? (A) 3 (B) 1 (C) 0 (D) 10 | **R: A**
+5. Qual operador compara valor e tipo? (A) = (B) == (C) === (D) != | **R: C**
+6. Qual método localiza um elemento HTML por ID? (A) console.log() (B) document.getElementById() (C) typeof (D) Number() | **R: B**
+7. Qual operador lógico representa E? (A) || (B) ! (C) &amp;&amp; (D) = | **R: C**
+8. Qual função converte texto numérico em número? (A) String() (B) Number() (C) Boolean() (D) typeof | **R: B**
 
 ## 12. Entrega das atividades
 
@@ -390,10 +390,10 @@ aula04-javascript/
 
 **Checklist de entrega:**
 
-- [ ] Arquivos HTML, CSS e JavaScript organizados.
+- [x] Arquivos HTML, CSS e JavaScript organizados.
 - [ ] Laboratório 1: cadastro simples executado.
-- [ ] Laboratório 2: calculadora funcional.
-- [ ] Laboratório 3: calculadora de média validada.
+- [x] Laboratório 2: calculadora funcional.
+- [x] Laboratório 3: calculadora de média validada.
 - [ ] Exercícios de fixação realizados.
 - [ ] Capturas de tela mostrando os testes.
 
