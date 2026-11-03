@@ -57,7 +57,7 @@ Exemplos de uso: calcular o total de uma compra, validar um formulário, atualiz
 Use um navegador moderno e um editor como o Visual Studio Code. Crie a pasta `aula01-javascript` com os arquivos:
 
 ```text
-aula01-javascript/
+aula04-javascript/
 ├── index.html
 ├── style.css
 └── script.js
@@ -379,7 +379,7 @@ Marque uma alternativa para cada questão e discuta suas escolhas com a turma.
 Organize a pasta de entrega:
 
 ```text
-Aula01-JavaScript/
+aula04-javascript/
 ├── index.html
 ├── style.css
 ├── script.js
