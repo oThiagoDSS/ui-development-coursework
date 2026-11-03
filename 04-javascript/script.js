@@ -58,3 +58,77 @@ btnMedia.addEventListener("click", function () {
   // 5. Exibição do resultado (toFixed(2) limita a 2 casas decimais)
   resultadoMedia.textContent = `A média final é: ${media.toFixed(2)}`;
 });
+
+// --- Exercícios de fixação ---
+
+// 1. Cadastro de estudante
+const nome = "Ana Silva";
+const matricula = 202410123;
+const curso = "Análise e Desenvolvimento de Sistemas";
+const periodo = "2° Período";
+const situacaoAcademica = "Matriculado";
+
+console.log("--- DADOS DO ESTUDANTE ---");
+console.log("Nome:", nome);
+console.log("Matricula:", matricula);
+console.log("Curso:", curso);
+console.log("Período:", periodo);
+console.log("Situação Acadêmica:", situacaoAcademica);
+
+// 2. Compra
+const precoUnitario = 150.0;
+const quantidade = 3;
+const valorTotal = precoUnitario * quantidade;
+
+// Usando crases (`) para funcionar a interpolação com ${}
+console.log(`Preço unitário: R$ ${precoUnitario.toFixed(2)}`);
+console.log(`Quantidade: ${quantidade}`);
+console.log(`Valor total: R$ ${valorTotal.toFixed(2)}`);
+
+// 3. Desconto
+const precoOriginal = 200.0;
+const taxaDesconto = 0.15; // 15%
+
+const valorDesconto = precoOriginal * taxaDesconto;
+const precoFinal = precoOriginal - valorDesconto;
+
+console.log(`Preço original: R$ ${precoOriginal.toFixed(2)}`);
+console.log(`Desconto (15%): R$ ${valorDesconto.toFixed(2)}`);
+console.log(`Preço final com desconto: R$ ${precoFinal.toFixed(2)}`);
+
+// 4. Comparação
+// Usado 'let' em vez de 'const' para permitir reatribuir o valor no exercício 5
+let idade = 20;
+
+console.log("Idade testada:", idade);
+console.log("Maior que 18 (idade > 18):", idade > 18); // true
+console.log("Menor que 18 (idade < 18):", idade < 18); // false
+console.log("Igual a 18 (idade === 18):", idade === 18); // false
+console.log("Maior ou igual a 18 (idade >= 18):", idade >= 18); // true
+
+// 5. Operadores lógicos
+// Reatribuindo o valor de idade sem usar a palavra 'const' novamente
+idade = 22;
+const possuiCadastro = true;
+const contaAtiva = true;
+
+// 1. Idade mínima (>= 18) E possui cadastro
+const idadeMinimaECadastro = idade >= 18 && possuiCadastro;
+console.log("Tem idade mínima E cadastro?", idadeMinimaECadastro); // true
+
+// 2. Conta ativa OU cadastro
+const contaAtivaOuCadastro = contaAtiva || possuiCadastro;
+console.log("Conta ativa OU cadastro?", contaAtivaOuCadastro); // true
+
+// 3. Conta NÃO ativa
+const contaNaoAtiva = !contaAtiva;
+console.log("A conta NÃO está ativa?", contaNaoAtiva); // false
+
+// 6. Par ou ímpar
+const numero = 7;
+
+if (numero % 2 === 0) {
+  console.log(`O número ${numero} é PAR.`);
+} else {
+  console.log(`O número ${numero} é ÍMPAR.`);
+}
