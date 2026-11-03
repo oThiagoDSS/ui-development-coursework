@@ -1,63 +1,4 @@
-// 4.1. Preparação do ambiente
-console.log("Olá, estudante de ADS!");
-console.log("Minha primeira aplicação JavaScript.");
-
-// 5. Variáveis e tipos de dados
-let idade = 22; // pode receber outro valor
-idade = 23;
-const curso = "ADS"; // não pode ser reatribuído
-console.log(idade, curso);
-
-// 5.1. Tipos fundamentais
-let nome = "João";
-idade = 30;
-let ativo = true;
-console.log(typeof nome);
-console.log(typeof idade);
-console.log(typeof ativo);
-
-// 6. Operadores JavaScript
-let numero1 = 20;
-let numero2 = 5;
-console.log("Soma:", numero1 + numero2); // 25
-console.log("Subtração:", numero1 - numero2); // 15
-console.log("Produto:", numero1 * numero2); // 100
-console.log("Divisão:", numero1 / numero2); // 4
-console.log("Resto:", numero1 % numero2); // 0
-console.log("Potência:", numero1 ** 2); // 400
-
-// 6.2. Atribuição
-let saldo = 100;
-saldo += 50; // 150
-saldo -= 20; // 130
-saldo *= 2; // 260
-saldo /= 4; // 65
-console.log(saldo);
-
-// 6.3. Comparação
-console.log(10 == "10"); // true
-console.log(10 === "10"); // false
-// console.log(20 >= 18); // true
-
-// 6.4. Lógicos
-idade = 20;
-const possuiCadastro = true;
-const podeAcessar = idade >= 18 && possuiCadastro;
-console.log(podeAcessar); // true
-
-// Laboratório 1 - Cadastro simples de usuário
-nome = "Lucas Ferreira";
-const email = "lucas@gmail.com";
-idade = 24;
-let usuarioAtivo = true;
-
-console.log("DADOS DO USUÁRIO");
-console.log("Nome:", nome);
-console.log("E-mail:", email);
-console.log("Idade:", idade);
-console.log("Usuário ativo:", usuarioAtivo);
-
-// 8.3. JavaScript
+// 1. CALCULADORA DE OPERAÇÕES BÁSICAS
 const botao = document.getElementById("btnCalcular");
 
 botao.addEventListener("click", function () {
@@ -84,4 +25,36 @@ botao.addEventListener("click", function () {
     <p>Multiplicação: ${multiplicacao}</p>
     <p>Divisão: ${divisao}</p>
   `;
+});
+
+// 2. LABORATÓRIO 3 - CALCULADORA DE MÉDIA
+const btnMedia = document.getElementById("calcular");
+
+btnMedia.addEventListener("click", function () {
+  // 1. Seleção dos elementos do HTML
+  const campoNota1 = document.getElementById("nota1");
+  const campoNota2 = document.getElementById("nota2");
+  const campoNota3 = document.getElementById("nota3");
+  const resultadoMedia = document.getElementById("resultadoMedia");
+
+  // 2. Validação: verifica se algum campo está vazio
+  if (
+    campoNota1.value === "" ||
+    campoNota2.value === "" ||
+    campoNota3.value === ""
+  ) {
+    resultadoMedia.textContent = "Preencha as três notas para calcular.";
+    return;
+  }
+
+  // 3. Conversão dos valores de texto para número
+  const nota1 = Number(campoNota1.value);
+  const nota2 = Number(campoNota2.value);
+  const nota3 = Number(campoNota3.value);
+
+  // 4. Cálculo da média
+  const media = (nota1 + nota2 + nota3) / 3;
+
+  // 5. Exibição do resultado (toFixed(2) limita a 2 casas decimais)
+  resultadoMedia.textContent = `A média final é: ${media.toFixed(2)}`;
 });
