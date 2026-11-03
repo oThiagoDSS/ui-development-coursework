@@ -384,18 +384,17 @@ aula04-javascript/
 ├── style.css
 ├── script.js
 └── evidencias/
-    ├── calculadora.png
-    └── media-estudante.png
+    └── calculadora-media-estudante.png
 ```
 
 **Checklist de entrega:**
 
 - [x] Arquivos HTML, CSS e JavaScript organizados.
-- [ ] Laboratório 1: cadastro simples executado.
+- [x] Laboratório 1: cadastro simples executado.
 - [x] Laboratório 2: calculadora funcional.
 - [x] Laboratório 3: calculadora de média validada.
-- [ ] Exercícios de fixação realizados.
-- [ ] Capturas de tela mostrando os testes.
+- [x] Exercícios de fixação realizados.
+- [x] Capturas de tela mostrando os testes.
 
 ## 13. Critérios de avaliação prática
 
