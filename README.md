@@ -11,8 +11,9 @@ Welcome to my academic repository for **User Interface Development**, part of th
 | **Module 01: HCI & Usability** | Introduction to HCI, usability, accessibility, ergonomics, and ISO 9241 standards. | Completed | [`01-hci-evaluations/`](./01-hci-evaluations/) |
 | **Module 02: UX/UI & Design Thinking** | Design Thinking phases, user personas, journey mapping, low/high-fi prototyping (Figma), and WCAG. | Completed | [`02-ux-ui-design-thinking/`](./02-ux-ui-design-thinking/) |
 | **Module 03: HTML5 & CSS3 Fundamentals** | Semantic markup, forms, CSS box model, Flexbox, Grid, positioning, and media queries. | Completed | [`03-html-css-fundamentals/`](./03-html-css-fundamentals/) |
-| **Module 04: JavaScript Fundamentals** | Intro to JS, `let`/`const`, data types, operators, DOM selection, and event listeners. | Completed | [`04-javascript-intro/`](./04-javascript-intro/) |
+| **Module 04: JavaScript & DOM Manipulation** | Variables, operators, conditionals (`if/else`), input validation, event delegation, and `localStorage`. | In Progress | [`04-javascript-intro/`](./04-javascript-intro/) |
 | **Module 05: Final Academic Project** | Integrated interface development project applying HCI, UX/UI, HTML, CSS, and JS. | Upcoming | *Pending* |
+
 
 ---
 
