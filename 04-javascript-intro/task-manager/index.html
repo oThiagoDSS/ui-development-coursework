@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A lightweight task manager built with vanilla JavaScript." />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app" aria-labelledby="app-title">
+      <header class="app__header">
+        <h1 id="app-title">Task Manager</h1>
+        <p class="app__subtitle">Keep track of what matters.</p>
+      </header>
+
+      <form id="task-form" class="app__form" autocomplete="off">
+        <label for="task-input" class="visually-hidden">New task</label>
+        <input
+          id="task-input"
+          type="text"
+          placeholder="What needs to be done?"
+          maxlength="120"
+        />
+        <button type="submit" id="add-btn">Add</button>
+      </form>
+
+      <section class="app__filters" aria-label="Filter tasks">
+        <button type="button" class="filter is-active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="active">Active</button>
+        <button type="button" class="filter" data-filter="done">Done</button>
+      </section>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+      <footer class="app__footer">
+        <span id="counter">No tasks</span>
+        <button type="button" id="clear-done" class="link-btn" disabled>
+          Clear done
+        </button>
+      </footer>
+    </main>
+  </body>
+</html>
