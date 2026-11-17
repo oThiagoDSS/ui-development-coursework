@@ -1,51 +1,99 @@
 // Elements are cached once so the DOM is queried only on page load.
+const averageForm = document.getElementById("average-form");
+const nameInput = document.getElementById("student-name");
 const grade1Input = document.getElementById("grade1");
 const grade2Input = document.getElementById("grade2");
 const grade3Input = document.getElementById("grade3");
-const calculateButton = document.getElementById("calculate");
-const resultText = document.getElementById("result");
+const clearButton = document.getElementById("clear");
+const resultBox = document.getElementById("result");
 
-calculateButton.addEventListener("click", () => {
+// Pure functions (Lesson 2): decoupled from the DOM for clarity and reuse.
+function calculateAverage(grade1, grade2, grade3) {
+  return (grade1 + grade2 + grade3) / 3;
+}
+
+function isValidGrade(grade) {
+  return Number.isFinite(grade) && grade >= 0 && grade <= 10;
+}
+
+function getStatus(average) {
+  if (average >= 7) return "Approved";
+  if (average >= 5) return "Recovery";
+  return "Failed";
+}
+
+function getStatusClass(status) {
+  if (status === "Approved") return "approved";
+  if (status === "Recovery") return "recovery";
+  return "failed";
+}
+
+function showError(message, elementToFocus = null) {
+  resultBox.textContent = message;
+  resultBox.className = "result error";
+  if (elementToFocus) {
+    elementToFocus.focus();
+  }
+}
+
+// Form submission event (Lesson 3)
+averageForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const studentName = nameInput.value.trim();
   const grade1Text = grade1Input.value.trim();
   const grade2Text = grade2Input.value.trim();
   const grade3Text = grade3Input.value.trim();
 
-  // Validate before converting: Number("") returns 0, which would
-  // silently count an empty field as a zero grade.
-  if (grade1Text === "" || grade2Text === "" || grade3Text === "") {
-    resultText.textContent = "Please fill in all three grades.";
+  // 1. Validate student name
+  if (studentName === "") {
+    showError("Please enter the student's name.", nameInput);
     return;
   }
 
-  // Convert each string to a number before any arithmetic.
-  // Number() (not parseInt) so garbage becomes NaN instead of 7 from "7abc".
-  const grade1 = Number(grade1Text);
-  const grade2 = Number(grade2Text);
-  const grade3 = Number(grade3Text);
+  // 2. Validate empty grade fields before Number() conversion
+  if (grade1Text === "" || grade2Text === "" || grade3Text === "") {
+    showError("Please fill in all three grades.");
+    return;
+  }
 
-  // Validate each grade individually so the user knows which field
-  // is wrong (PDF exercise 6). isFinite rejects NaN and Infinity;
-  // the range check blocks values outside 0..10.
+  // 3. Convert to Number and validate range (0 to 10) per field
   const grades = [
-    { value: grade1, label: "Grade 1" },
-    { value: grade2, label: "Grade 2" },
-    { value: grade3, label: "Grade 3" },
+    { value: Number(grade1Text), label: "Grade 1", input: grade1Input },
+    { value: Number(grade2Text), label: "Grade 2", input: grade2Input },
+    { value: Number(grade3Text), label: "Grade 3", input: grade3Input },
   ];
 
-  const invalid = grades.find(
-    ({ value }) => !Number.isFinite(value) || value < 0 || value > 10
-  );
+  const invalidGrade = grades.find(({ value }) => !isValidGrade(value));
 
-  if (invalid) {
-    resultText.textContent = `${invalid.label} must be a number between 0 and 10.`;
+  if (invalidGrade) {
+    showError(
+      `${invalidGrade.label} must be a number between 0 and 10.`,
+      invalidGrade.input
+    );
     return;
   }
 
-  const average = (grade1 + grade2 + grade3) / 3;
+  // 4. Calculate, classify, and update the UI
+  const average = calculateAverage(
+    grades[0].value,
+    grades[1].value,
+    grades[2].value
+  );
+  const status = getStatus(average);
+  const statusClass = getStatusClass(status);
 
-  // toFixed(2) rounds for display only; the classification uses
-  // the raw average to avoid rounding bias at the 6.0 threshold.
-  const status = average >= 6 ? "Approved" : "Retake";
+  resultBox.innerHTML = `
+    <strong>Student:</strong> ${studentName}<br />
+    <strong>Average:</strong> ${average.toFixed(1)}<br />
+    <strong>Status:</strong> ${status}
+  `;
+  resultBox.className = `result ${statusClass}`;
+});
 
-  resultText.textContent = `Average: ${average.toFixed(2)} — ${status}`;
+// Reset event to restore initial state
+clearButton.addEventListener("click", () => {
+  resultBox.textContent = "The result will be displayed here.";
+  resultBox.className = "result";
+  nameInput.focus();
 });
