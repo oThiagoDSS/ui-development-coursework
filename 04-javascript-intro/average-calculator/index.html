@@ -10,13 +10,14 @@
   <body>
     <main class="container">
       <h1>Average Calculator</h1>
-      <p class="subtitle">Enter the student's name and three grades.</p>
+      <p class="subtitle">Enter the student's name and three grades (0 to 10).</p>
 
       <form id="average-form" novalidate>
         <label for="student-name">Student Name</label>
         <input
           type="text"
           id="student-name"
+          autocomplete="name"
           placeholder="e.g., Mariana Silva"
         />
 
