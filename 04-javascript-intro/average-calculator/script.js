@@ -1,19 +1,19 @@
-// Elements are cached once so the DOM is queried only on page load.
-const averageForm = document.getElementById("average-form");
-const nameInput = document.getElementById("student-name");
-const grade1Input = document.getElementById("grade1");
-const grade2Input = document.getElementById("grade2");
-const grade3Input = document.getElementById("grade3");
-const clearButton = document.getElementById("clear");
-const resultBox = document.getElementById("result");
+// Cache DOM elements once on page load
+const averageForm = document.querySelector("#average-form");
+const nameInput = document.querySelector("#student-name");
+const grade1Input = document.querySelector("#grade1");
+const grade2Input = document.querySelector("#grade2");
+const grade3Input = document.querySelector("#grade3");
+const clearButton = document.querySelector("#clear");
+const resultBox = document.querySelector("#result");
 
-// Pure functions (Lesson 2): decoupled from the DOM for clarity and reuse.
+// Pure functions (Lesson 2)
 function calculateAverage(grade1, grade2, grade3) {
   return (grade1 + grade2 + grade3) / 3;
 }
 
 function isValidGrade(grade) {
-  return Number.isFinite(grade) && grade >= 0 && grade <= 10;
+  return !Number.isNaN(grade) && Number.isFinite(grade) && grade >= 0 && grade <= 10;
 }
 
 function getStatus(average) {
@@ -45,19 +45,16 @@ averageForm.addEventListener("submit", (event) => {
   const grade2Text = grade2Input.value.trim();
   const grade3Text = grade3Input.value.trim();
 
-  // 1. Validate student name
-  if (studentName === "") {
-    showError("Please enter the student's name.", nameInput);
+  // 1. Validate empty fields before Number() conversion (avoids Number("") === 0)
+  if (!studentName || grade1Text === "" || grade2Text === "" || grade3Text === "") {
+    showError(
+      "Please fill in all fields.",
+      !studentName ? nameInput : null
+    );
     return;
   }
 
-  // 2. Validate empty grade fields before Number() conversion
-  if (grade1Text === "" || grade2Text === "" || grade3Text === "") {
-    showError("Please fill in all three grades.");
-    return;
-  }
-
-  // 3. Convert to Number and validate range (0 to 10) per field
+  // 2. Convert strings to numbers and validate range (0 to 10)
   const grades = [
     { value: Number(grade1Text), label: "Grade 1", input: grade1Input },
     { value: Number(grade2Text), label: "Grade 2", input: grade2Input },
@@ -74,7 +71,7 @@ averageForm.addEventListener("submit", (event) => {
     return;
   }
 
-  // 4. Calculate, classify, and update the UI
+  // 3. Calculate, classify, and safely render result using textContent
   const average = calculateAverage(
     grades[0].value,
     grades[1].value,
@@ -83,11 +80,10 @@ averageForm.addEventListener("submit", (event) => {
   const status = getStatus(average);
   const statusClass = getStatusClass(status);
 
-  resultBox.innerHTML = `
-    <strong>Student:</strong> ${studentName}<br />
-    <strong>Average:</strong> ${average.toFixed(1)}<br />
-    <strong>Status:</strong> ${status}
-  `;
+  resultBox.textContent =
+    `Student: ${studentName}\n` +
+    `Average: ${average.toFixed(1)}\n` +
+    `Status: ${status}`;
   resultBox.className = `result ${statusClass}`;
 });
 
