@@ -21,5 +21,13 @@ checkButton.addEventListener("click", () => {
     return;
   }
 
-  resultText.textContent = age >= 18 ? "Adult" : "Minor";
+  if (age >= 18) {
+    resultText.textContent = "Adult";
+  } else {
+    // Get the current year dynamically and add the remaining years until 18.
+    const currentYear = new Date().getFullYear();
+    const adultYear = currentYear + (18 - age);
+
+    resultText.textContent = `Minor! You will become an adult in ${adultYear}.`;
+  }
 });
